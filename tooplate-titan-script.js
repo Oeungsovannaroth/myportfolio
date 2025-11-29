@@ -81,7 +81,7 @@ function updateActiveMenuItem() {
             // Remove active class from all menu items
             document.querySelectorAll('.nav-links a').forEach(item => item.classList.remove('active'));
             document.querySelectorAll('.mobile-nav a').forEach(item => item.classList.remove('active'));
-            
+
             // Add active class to current menu item
             if (menuItem) menuItem.classList.add('active');
             if (mobileMenuItem) mobileMenuItem.classList.add('active');
@@ -100,27 +100,27 @@ function initTimeline() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const timelineProgress = document.querySelector('.timeline-progress');
     const timelineFilters = document.querySelectorAll('.timeline-filter');
-    
+
     // Timeline scroll progress
     function updateTimelineProgress() {
         const timelineContainer = document.querySelector('.timeline-container');
         const containerRect = timelineContainer.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        
+
         if (containerRect.top < windowHeight && containerRect.bottom > 0) {
-            const progress = Math.max(0, Math.min(1, 
+            const progress = Math.max(0, Math.min(1,
                 (windowHeight - containerRect.top) / (containerRect.height + windowHeight)
             ));
             timelineProgress.style.height = `${progress * 100}%`;
         }
     }
-    
+
     // Timeline item visibility
     function updateTimelineItems() {
         timelineItems.forEach((item, index) => {
             const rect = item.getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight * 0.8;
-            
+
             if (isVisible && !item.classList.contains('visible')) {
                 setTimeout(() => {
                     item.classList.add('visible');
@@ -128,16 +128,16 @@ function initTimeline() {
             }
         });
     }
-    
+
     // Timeline filtering
     timelineFilters.forEach(filter => {
         filter.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
-            
+
             // Update active filter
             timelineFilters.forEach(f => f.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter timeline items
             timelineItems.forEach(item => {
                 const category = item.getAttribute('data-category');
@@ -157,7 +157,7 @@ function initTimeline() {
             });
         });
     });
-    
+
     // Timeline node interactions
     document.querySelectorAll('.timeline-node').forEach(node => {
         node.addEventListener('click', function() {
@@ -165,7 +165,7 @@ function initTimeline() {
             document.querySelectorAll('.timeline-node').forEach(n => n.classList.remove('active'));
             // Add active class to clicked node
             this.classList.add('active');
-            
+
             // Smooth scroll to the timeline item
             const timelineItem = this.closest('.timeline-item');
             timelineItem.scrollIntoView({
@@ -174,13 +174,13 @@ function initTimeline() {
             });
         });
     });
-    
+
     // Listen for scroll events
     window.addEventListener('scroll', () => {
         updateTimelineProgress();
         updateTimelineItems();
     });
-    
+
     // Initial calls
     updateTimelineProgress();
     updateTimelineItems();
@@ -188,3 +188,43 @@ function initTimeline() {
 
 // Initialize timeline when DOM is ready
 document.addEventListener('DOMContentLoaded', initTimeline);
+
+const words = [
+    "Creative Developer",
+    "Designer",
+    "Developer",
+    "Freelancer",
+    "Photographer"
+];
+
+const typedText = document.querySelector(".typed-text");
+
+let wordIndex = 0;
+let charIndex = 0;
+let typing = true;
+
+function typeEffect() {
+    let currentWord = words[wordIndex];
+
+    if (typing) {
+        // typing forward
+        typedText.textContent = currentWord.substring(0, charIndex++);
+        if (charIndex > currentWord.length) {
+            typing = false;
+            setTimeout(typeEffect, 1200); // pause before deleting
+            return;
+        }
+    } else {
+        // deleting
+        typedText.textContent = currentWord.substring(0, charIndex--);
+        if (charIndex < 0) {
+            typing = true;
+            wordIndex = (wordIndex + 1) % words.length; // next word
+            charIndex = 0;
+        }
+    }
+
+    setTimeout(typeEffect, typing ? 70 : 50); // speed
+}
+
+typeEffect();

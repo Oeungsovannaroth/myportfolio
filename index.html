@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOVANNAROTH</title>
     <link rel="stylesheet" href="tooplate-titan-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
     <!--
 
 Tooplate 2147 Titan Folio
@@ -15,21 +18,160 @@ https://www.tooplate.com/view/2147-titan-folio
 Free HTML CSS Template
 
 -->
+
 </head>
+<style>
+    .blank {
+        pointer-events: auto !important;
+    }
+    
+    .card-do {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .card-do-title span {
+        color: #dbd071;
+        font-weight: bolder;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    
+    @media (min-width: 768px) {
+        .card-do {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .card-do {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    .card1 {
+        perspective: 1000px;
+    }
+    
+    .card-inner1 {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        font-weight: bold;
+    }
+    
+    .card-frond-all span {
+        font-size: 35px;
+        color: #dad289;
+    }
+    
+    .card1:hover .card-inner1 {
+        transform: rotateY(180deg);
+    }
+    
+    .card-front1,
+    .card-back1,
+    .card-front2,
+    .card-back2,
+    .card-front3,
+    .card-back3 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        color: #fff;
+    }
+    
+    .card-front1 {
+        background: #1f1f1f;
+    }
+    
+    .card-front2 {
+        background: #868f8c;
+    }
+    
+    .card-front3 {
+        background: #5b5a4e;
+    }
+    
+    .card-back1 {
+        background: #413d3d;
+        transform: rotateY(180deg);
+    }
+    
+    .card-back2 {
+        background: #423e3e;
+        transform: rotateY(180deg);
+    }
+    
+    .card-back3 {
+        background: #596360;
+        transform: rotateY(180deg);
+    }
+    
+    .typed-text {
+        font-size: 28px;
+        font-weight: 600;
+        white-space: nowrap;
+        border-right: 3px solid black;
+        overflow: hidden;
+        width: fit-content;
+    }
+    
+    .section-title h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        font-weight: 300;
+        line-height: 1.2;
+        color: var(--heading-color);
+        margin-bottom: 1.5rem;
+        letter-spacing: -1px;
+    }
+    
+    @media (max-width: 768px) {
+        .section-title h2 {
+            font-size: 2.5rem;
+        }
+    }
+    
+    body::before {
+        position: absolute;
+        width: min(1400px, 90vw);
+        top: 10%;
+        left: 50%;
+        height: 90%;
+        transform: translateX(-50%);
+        content: '';
+        background-image: url(images/bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        pointer-events: none;
+    }
+</style>
 
 <body>
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <div class="logo-icon">⚡</div>
-                <div class="logo-text">Titan Folio</div>
+                <div class="logo-icon"></div>
+                <div class="logo-text">SOVANNAROTH</div>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#timeline">Journey</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#timeline">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
@@ -43,8 +185,7 @@ Free HTML CSS Template
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#timeline">Journey</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#timeline">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -71,27 +212,24 @@ Free HTML CSS Template
             </div>
         </div>
         <div class="hero-content">
-            <h1>Titan Folio</h1>
-            <p class="subtitle">Creative Developer & Designer</p>
+            <h1>OEUNG SOVANNAROTH</h1>
+            <p class="subtitle typed-text">Creative Developer, Designer, Developer, Freelancer, Photographer</p>
             <p>Crafting digital experiences with passion and precision</p>
             <div class="cta-buttons">
-                <a href="#portfolio" class="cta-primary">View My Work</a>
+                <a href="#timeline" class="cta-primary">View My Work</a>
                 <a href="#contact" class="cta-secondary">Let's Talk</a>
             </div>
 
             <div class="stats-section">
                 <div class="stat-card">
-                    <span class="stat-number">100+</span>
+                    <span class="stat-number">10+</span>
                     <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">5+</span>
+                    <span class="stat-number">2+</span>
                     <span class="stat-label">Years</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Clients</span>
-                </div>
+
             </div>
         </div>
     </section>
@@ -100,31 +238,71 @@ Free HTML CSS Template
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate about creating digital experiences that make a difference</p>
+                <p class="section-subtitle">I’m a front-end developer passionate about creating modern, responsive, and user-friendly websites. I enjoy turning ideas into real digital experiences using clean code, creativity, and problem-solving. I am always learning new technologies
+                    and improving my UI/UX skills to build better products.</p>
             </div>
 
             <div class="about-content">
                 <div class="about-intro">
                     <div class="about-image"></div>
                     <div class="about-text">
-                        <h3>My Journey</h3>
-                        <p>I'm a passionate creative developer with over 5 years of experience in crafting beautiful, functional websites and applications. My expertise spans across modern web technologies, user experience design, and creative problem-solving.</p>
-                        <p>I believe in the power of clean code, intuitive design, and seamless user experiences. When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or capturing moments through photography.
-                            Get organized and stay on track with <a href="https://timermo.com" rel="nofollow" target="_blank">TimerMo</a> today. All photos sourced from <a href="https://unsplash.com" rel="nofollow" target="_blank">Unsplash</a>. Browse
-                            thousands of stunning vector stickers at <a href="https://www.vectorsticker.com" rel="nofollow" target="_blank">VectorSticker</a> to enhance your designs.</p>
+
+                        <p>I'm Sovannaroth, a passionate Front-End Developer focused on crafting beautiful, functional, and user-centered websites. I bring ideas to life through clean code, thoughtful design, and animation.
+                        </p>
+                        <p>I design and build digital experiences that turn imagination into reality — blending creativity, smooth interactions, and modern web technologies.</p>
                     </div>
                 </div>
 
-                <div class="about-cards">
-                    <div class="about-card">
-                        <h4>🎯 Mission</h4>
-                        <p>To create digital experiences that inspire, engage, and solve real-world problems through innovative design and development.</p>
-                    </div>
+                <div>
+                    <!-- Section Title -->
+                    <div class="section-title" data-aos="fade-up">
 
-                    <div class="about-card">
-                        <h4>💡 Vision</h4>
-                        <p>A world where technology seamlessly integrates with human needs, creating more meaningful digital interactions.</p>
+                        <h2>WHAT CAN I DO?</h2>
+
                     </div>
+                    <!-- End Section Title -->
+
+                    <section class="card-do">
+                        <div class="card1">
+                            <div class="card-inner1">
+                                <div class="card-frond-all">
+                                    <div class="card-front1"><span>Website Development</span></div>
+                                </div>
+                                <div class="card-back1">
+                                    <div class="card-do-title"><span>Website Development</span>
+                                        <p>Crafting responsive, scalable, and visually appealing website tailored to business needs.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card1">
+                            <div class="card-inner1">
+                                <div class="card-frond-all">
+
+                                    <div class="card-front2"><span>UI/UX & Edit Video</span></div>
+                                </div>
+                                <div class="card-back2">
+                                    <div class="card-do-title"><span>UI/UX & Edit Video</span>
+                                        <p>Designing intuitive user interfaces and creating string visual assets including branding, making materal, and layouts that deliver both function and beauty.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card1">
+                            <div class="card-inner1">
+                                <div class="card-frond-all">
+                                    <div class="card-front3"><span>Content Creation</span></div>
+                                </div>
+                                <div class="card-back2">
+                                    <div class="card-do-title"><span>Content Creation</span>
+                                        <p>Creating educational and engaging content about tech. design, and development.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -133,15 +311,15 @@ Free HTML CSS Template
     <section id="skills" class="fade-in">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-subtitle">Combining technical excellence with creative vision</p>
+                <h2 class="section-title">Skills & technologies</h2>
+                <p class="section-subtitle">Combining technical excellence with creative vision.</p>
             </div>
 
             <div class="skills-container">
                 <div class="skills-wrapper">
                     <div class="skills-visual">
                         <div class="skills-circle">
-                            <div class="skill-node">
+                            <!-- <div class="skill-node">
                                 <div class="skill-icon">🎨</div>
                                 <div class="skill-name">UI/UX</div>
                             </div>
@@ -162,11 +340,110 @@ Free HTML CSS Template
                                 <div class="skill-name">DevOps</div>
                             </div>
                             <div class="skill-node">
-                                <div class="skill-icon">💡</div>
-                                <div class="skill-name">Innovation</div>
+                                <div class="skill-icon">🚀</div>
+                                <div class="skill-name">DevOps</div>
+                            </div> -->
+
+                            <div class="banner">
+                                <div class="slider" style="--quantity: 21">
+
+                                    <div class="item" style="--position: 1">
+                                        <i class="devicon-csharp-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 2">
+                                        <i class="devicon-cplusplus-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 3">
+
+                                        <i class="devicon-microsoftsqlserver-plain-wordmark colored"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 4">
+
+                                        <i class="devicon-mysql-plain-wordmark"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 5">
+                                        <i class="devicon-html5-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 6">
+                                        <i class="devicon-css3-plain-wordmark"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 7">
+                                        <i class="devicon-tailwindcss-original"></i>
+                                    </div>
+                                    <div class="item" style="--position: 8">
+                                        <i class="devicon-javascript-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 9">
+                                        <i class="devicon-jquery-plain-wordmark colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 10">
+
+                                        <i class="devicon-react-original-wordmark colored"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 11">
+                                        <i class="devicon-bootstrap-plain-wordmark colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 12">
+
+                                        <i class="devicon-github-original-wordmark"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 13">
+                                        <i class="devicon-vercel-original"></i>
+                                    </div>
+                                    <div class="item" style="--position: 14">
+                                        <i class="devicon-php-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 15">
+
+                                        <i class="devicon-laravel-original colored"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 16">
+                                        <i class="devicon-python-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 17">
+
+                                        <i class="devicon-django-plain"></i>
+
+
+
+                                    </div>
+                                    <div class="item" style="--position: 18">
+                                        <i class="devicon-figma-plain colored"></i>
+                                    </div>
+                                    <div class="item" style="--position: 19">
+
+                                        <i class="devicon-kotlin-plain colored"></i>
+
+                                    </div>
+                                    <div class="item" style="--position: 20">
+                                        <i class="devicon-dataspell-plain"></i>
+                                    </div>
+                                    <div class="item" style="--position: 21">
+                                        <i class="devicon-mongodb-plain"></i>
+
+
+                                    </div>
+                                    <div class="item" style="--position: 22">
+
+                                        <i class="devicon-postgresql-plain"></i>
+
+
+
+                                    </div>
+
+                                </div>
                             </div>
-                            <div class="skills-center">⚡</div>
+                            <!-- Center -->
+                            <!-- <div class="skills-center">⚡</div> -->
+
                         </div>
+
                     </div>
 
                     <div class="skills-list">
@@ -174,7 +451,7 @@ Free HTML CSS Template
                             <h4>Frontend Excellence</h4>
                             <p>Modern JavaScript frameworks, responsive design, and pixel-perfect implementations</p>
                             <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 95%"></div>
+                                <div class="skill-progress-bar" style="width: 80%"></div>
                             </div>
                         </div>
 
@@ -182,23 +459,7 @@ Free HTML CSS Template
                             <h4>Creative Design</h4>
                             <p>User-centered design thinking with a focus on accessibility and visual appeal</p>
                             <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <h4>Full-Stack Development</h4>
-                            <p>End-to-end application development from database to deployment</p>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <h4>Performance & Optimization</h4>
-                            <p>Lightning-fast load times and seamless user experiences across all devices</p>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 92%"></div>
+                                <div class="skill-progress-bar" style="width: 80%"></div>
                             </div>
                         </div>
                     </div>
@@ -210,8 +471,9 @@ Free HTML CSS Template
     <section id="timeline" class="fade-in">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Journey</h2>
-                <p class="section-subtitle">From curious beginner to seasoned developer - here's how I got here</p>
+                <h2 class="section-title">Resume</h2>
+                <p class="section-subtitle">Driven front-end developer focused on transforming ideas into digital reality. Experienced in creating responsive layouts, modern interfaces, and interactive web animations. Passionate about continuous learning, problem-solving, and building
+                    clean, user-centered digital experiences.</p>
             </div>
 
             <div class="timeline-controls">
@@ -228,196 +490,117 @@ Free HTML CSS Template
                 <div class="timeline-item" data-category="education">
                     <div class="timeline-node">🎓</div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2018 - 2022</div>
-                        <h3 class="timeline-title">Computer Science Degree</h3>
-                        <div class="timeline-company">Stanford University</div>
+                        <div class="timeline-year">2018 - 2021</div>
+                        <h3 class="timeline-title">Secondary School diploma</h3>
+                        <div class="timeline-company">Kampot krong high school</div>
                         <p class="timeline-description">
-                            Graduated Magna Cum Laude with a focus on Human-Computer Interaction and Software Engineering. Developed strong foundations in algorithms, data structures, and user-centered design principles.
+                            Focused on general education with emphasis on science and technology subjects. Developed teamwork and communication skills through school projects and activities.
                         </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">Java</span>
-                            <span class="timeline-skill">Python</span>
-                            <span class="timeline-skill">Data Structures</span>
-                            <span class="timeline-skill">UI/UX Design</span>
-                        </div>
                         <div class="timeline-achievements">
-                            <div class="timeline-achievement">Dean's List for 6 semesters</div>
-                            <div class="timeline-achievement">Led university hackathon team to 1st place</div>
-                            <div class="timeline-achievement">Published research on accessibility in web design</div>
+                            <div class="timeline-achievement">
+                                Graduated with certificate of Appreciation — (Year)</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="timeline-item" data-category="work">
-                    <div class="timeline-node">💼</div>
+                <div class="timeline-item" data-category="education">
+                    <div class="timeline-node">🎓</div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2022 - 2023</div>
-                        <h3 class="timeline-title">Junior Frontend Developer</h3>
-                        <div class="timeline-company">TechStart Inc.</div>
+                        <div class="timeline-year">2024 - Present</div>
+                        <h3 class="timeline-title">High School Diploma</h3>
+                        <div class="timeline-company">Kampot krong high school</div>
                         <p class="timeline-description">
-                            Started my professional journey building responsive web applications for startup clients. Learned to work in fast-paced environments and collaborate effectively with cross-functional teams.
+                            Graduated with a concentration in business and computing. Gained experience in research, presentations, and critical thinking.
                         </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">React</span>
-                            <span class="timeline-skill">JavaScript</span>
-                            <span class="timeline-skill">CSS3</span>
-                            <span class="timeline-skill">Git</span>
-                        </div>
                         <div class="timeline-achievements">
-                            <div class="timeline-achievement">Reduced page load times by 40%</div>
-                            <div class="timeline-achievement">Built 15+ responsive landing pages</div>
-                            <div class="timeline-achievement">Mentored 2 junior interns</div>
+                            <div class="timeline-achievement">
+
+                                Graduated with a Diploma in Grade 12 with an overall Grade A.</div>
                         </div>
                     </div>
                 </div>
-
+                <div class="timeline-item" data-category="education">
+                    <div class="timeline-node">🎓</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021 - 2024</div>
+                        <h3 class="timeline-title">Bachelor of Computer Science and Engineering</h3>
+                        <div class="timeline-company">Aceleda university of bussiness</div>
+                        <p class="timeline-description">
+                            GCurrently pursuing studies in computer science, software development, and programming. Developing skills in web technologies, databases, and problem-solving for realworld applications.
+                        </p>
+                        <div class="timeline-achievements">
+                            <div class="timeline-achievement">
+                                Achieved a 4.0 GPA during the first academic year.</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="timeline-item" data-category="project">
                     <div class="timeline-node">🚀</div>
                     <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
-                        <h3 class="timeline-title">EcoTrack Mobile App</h3>
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">iSTUDIO</h3>
                         <div class="timeline-company">Personal Project</div>
                         <p class="timeline-description">
-                            Developed a React Native app for tracking personal carbon footprint with gamification elements. The app gained 10K+ downloads and positive reviews for its intuitive design.
+                            iSTUDIO focuses on delivering sleek, user-friendly interfaces and interactive digital experiences for clients.
                         </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">React Native</span>
-                            <span class="timeline-skill">Firebase</span>
-                            <span class="timeline-skill">Redux</span>
-                            <span class="timeline-skill">Chart.js</span>
+                        <div class="timeline-achievements">
+                            <div class="timeline-achievement">1,000+ active users</div>
+                            <div class="timeline-achievement">4.2/5 star rating</div>
                         </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-category="project">
+                    <div class="timeline-node">🚀</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">VPuppy Land</h3>
+                        <div class="timeline-company">Personal Project</div>
+                        <p class="timeline-description">
+                            Puppy Land offers information on different dog breeds, pet care tips, adoption services, and an interactive community for pet lovers.
+                        </p>
+                        <div class="timeline-achievements">
+                            <div class="timeline-achievement">100+ active users</div>
+                            <div class="timeline-achievement">4.2/5 star rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-category="project">
+                    <div class="timeline-node">🚀</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">VILLA AGENCY</h3>
+                        <div class="timeline-company">Personal Project</div>
+                        <p class="timeline-description">
+                            Villa Agency allows users to browse listings, view high-quality images, and contact agents directly for buying, renting, or investing in villas.
+                        </p>
                         <div class="timeline-achievements">
                             <div class="timeline-achievement">10,000+ active users</div>
-                            <div class="timeline-achievement">4.8/5 star rating on app stores</div>
-                            <div class="timeline-achievement">Featured in "Top Green Apps" article</div>
+                            <div class="timeline-achievement">4.8/5 star rating</div>
                         </div>
                     </div>
                 </div>
-
                 <div class="timeline-item" data-category="work">
-                    <div class="timeline-node">⭐</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023 - 2024</div>
-                        <h3 class="timeline-title">Senior Frontend Developer</h3>
-                        <div class="timeline-company">InnovateLab</div>
-                        <p class="timeline-description">
-                            Promoted to lead frontend development for enterprise SaaS products. Architected scalable component libraries and implemented advanced performance optimization techniques.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">Vue.js</span>
-                            <span class="timeline-skill">TypeScript</span>
-                            <span class="timeline-skill">Node.js</span>
-                            <span class="timeline-skill">Docker</span>
-                        </div>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">Led team of 5 developers</div>
-                            <div class="timeline-achievement">Improved app performance by 60%</div>
-                            <div class="timeline-achievement">Implemented design system used across 8 products</div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="timeline-item" data-category="work">
+                        <div class="timeline-node">💼</div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025 - Present</div>
+                            <h3 class="timeline-title">Frontend Developer</h3>
+                            <div class="timeline-company">ICT Center</div>
+                            <p class="timeline-description">
+                                Started my professional journey building responsive web applications for startup clients. Learned to work in fast-paced environments and collaborate effectively with cross-functional teams.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">React</span>
+                                <span class="timeline-skill">JavaScript</span>
+                                <span class="timeline-skill">Jqurey</span>
+                                <span class="timeline-skill">Git</span>
+                            </div>
 
-                <div class="timeline-item" data-category="education">
-                    <div class="timeline-node">🏆</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2024</div>
-                        <h3 class="timeline-title">AWS Solutions Architect</h3>
-                        <div class="timeline-company">Amazon Web Services</div>
-                        <p class="timeline-description">
-                            Earned AWS Solutions Architect certification to deepen my understanding of cloud infrastructure and scalable application deployment strategies.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">AWS</span>
-                            <span class="timeline-skill">Cloud Architecture</span>
-                            <span class="timeline-skill">DevOps</span>
-                            <span class="timeline-skill">Microservices</span>
-                        </div>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">Passed exam with 95% score</div>
-                            <div class="timeline-achievement">Migrated 3 legacy systems to cloud</div>
-                            <div class="timeline-achievement">Reduced infrastructure costs by 45%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="work">
-                    <div class="timeline-node">🎯</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2024 - Present</div>
-                        <h3 class="timeline-title">Freelance Full-Stack Developer</h3>
-                        <div class="timeline-company">Independent</div>
-                        <p class="timeline-description">
-                            Launched my freelance career to work on diverse, challenging projects while building lasting client relationships. Specializing in modern web applications and digital experiences.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">Full-Stack</span>
-                            <span class="timeline-skill">Client Relations</span>
-                            <span class="timeline-skill">Project Management</span>
-                            <span class="timeline-skill">Business Strategy</span>
-                        </div>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">50+ satisfied clients</div>
-                            <div class="timeline-achievement">100% project completion rate</div>
-                            <div class="timeline-achievement">Building scalable startup MVPs</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
-    <section id="portfolio" class="fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Work</h2>
-                <p class="section-subtitle">A showcase of projects that demonstrate creativity and technical excellence</p>
-            </div>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image ecommerce"></div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">E-Commerce Platform</h3>
-                        <p class="portfolio-description">A comprehensive e-commerce solution featuring modern design, seamless checkout process, and advanced analytics dashboard.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Stripe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image analytics"></div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Analytics Dashboard</h3>
-                        <p class="portfolio-description">Interactive data visualization dashboard with real-time updates, custom charts, and advanced filtering capabilities.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image music"></div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Music Streaming App</h3>
-                        <p class="portfolio-description">Mobile-first music streaming application with beautiful animations, offline playback, and social features.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">Redux</span>
-                            <span class="tag">AWS</span>
-                            <span class="tag">WebRTC</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="contact" class="fade-in">
         <div class="container">
@@ -443,7 +626,7 @@ Free HTML CSS Template
 
                     <div class="contact-details">
                         <h4>📍 Based in:</h4>
-                        <p>San Francisco, CA (Open to Remote)</p>
+                        <p>Phnom Penh Cambodia</p>
                     </div>
                 </div>
 
@@ -468,32 +651,7 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <footer>
-        <div class="footer-bottom">
-            <p class="footer-copyright">
-                © 2025 Titan Folio. All rights reserved.
-            </p>
-            <div class="footer-credits">
-                <a href="https://www.tooplate.com" target="_blank" rel="noopener noreferrer" class="footer-credit-link tooplate">
-                    <span class="footer-credit-icon">🎨</span>
-                    <span>Design by Tooplate</span>
-                </a>
-                <div class="footer-divider"></div>
-                <a href="https://fonts.google.com" target="_blank" rel="noopener noreferrer" class="footer-credit-link">
-                    <span class="footer-credit-icon">📝</span>
-                    <span>Google Fonts</span>
-                </a>
-                <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" class="footer-credit-link">
-                    <span class="footer-credit-icon">📸</span>
-                    <span>Unsplash</span>
-                </a>
-                <a href="https://cdnjs.com" target="_blank" rel="noopener noreferrer" class="footer-credit-link">
-                    <span class="footer-credit-icon">⚡</span>
-                    <span>CDNJS</span>
-                </a>
-            </div>
-        </div>
-    </footer>
+
 
     <script src="tooplate-titan-script.js"></script>
 </body>
