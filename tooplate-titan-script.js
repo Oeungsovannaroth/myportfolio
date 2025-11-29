@@ -196,35 +196,15 @@ const words = [
     "Freelancer",
     "Photographer"
 ];
-
-const typedText = document.querySelector(".typed-text");
-
-let wordIndex = 0;
-let charIndex = 0;
-let typing = true;
-
-function typeEffect() {
-    let currentWord = words[wordIndex];
-
-    if (typing) {
-        // typing forward
-        typedText.textContent = currentWord.substring(0, charIndex++);
-        if (charIndex > currentWord.length) {
-            typing = false;
-            setTimeout(typeEffect, 1200); // pause before deleting
-            return;
-        }
-    } else {
-        // deleting
-        typedText.textContent = currentWord.substring(0, charIndex--);
-        if (charIndex < 0) {
-            typing = true;
-            wordIndex = (wordIndex + 1) % words.length; // next word
-            charIndex = 0;
-        }
-    }
-
-    setTimeout(typeEffect, typing ? 70 : 50); // speed
+const selectTyped = document.querySelector('.typed');
+if (selectTyped) {
+    let typed_strings = selectTyped.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split(',');
+    new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+    });
 }
-
-typeEffect();

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
+
+
     <!--
 
 Tooplate 2147 Titan Folio
@@ -29,25 +31,25 @@ Free HTML CSS Template
         display: grid;
         gap: 1.5rem;
         grid-template-columns: 1fr;
-        padding: 2rem;
+        /* mobile default */
+        padding: 1.5rem;
     }
-    
-    .card-do-title span {
-        color: #dbd071;
-        font-weight: bolder;
-        margin-bottom: 10px;
-        font-size: 25px;
-    }
+    /* Medium screens (tablet) */
     
     @media (min-width: 768px) {
         .card-do {
             grid-template-columns: repeat(2, 1fr);
+            padding: 2rem;
+            gap: 2rem;
         }
     }
+    /* Large screens (desktop) */
     
     @media (min-width: 1200px) {
         .card-do {
             grid-template-columns: repeat(3, 1fr);
+            padding: 3rem;
+            gap: 2.5rem;
         }
     }
     
@@ -58,16 +60,12 @@ Free HTML CSS Template
     .card-inner1 {
         position: relative;
         width: 100%;
-        height: 200px;
+        padding-top: 60%;
+        /* responsive height based on width */
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
         font-weight: bold;
-    }
-    
-    .card-frond-all span {
-        font-size: 35px;
-        color: #dad289;
     }
     
     .card1:hover .card-inner1 {
@@ -81,16 +79,20 @@ Free HTML CSS Template
     .card-front3,
     .card-back3 {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.2rem;
         border-radius: 10px;
+        box-sizing: border-box;
         color: #fff;
+        font-weight: bold;
     }
+    /* Front backgrounds */
     
     .card-front1 {
         background: #1f1f1f;
@@ -103,6 +105,7 @@ Free HTML CSS Template
     .card-front3 {
         background: #5b5a4e;
     }
+    /* Back backgrounds */
     
     .card-back1 {
         background: #413d3d;
@@ -117,6 +120,34 @@ Free HTML CSS Template
     .card-back3 {
         background: #596360;
         transform: rotateY(180deg);
+    }
+    /* Text inside cards */
+    
+    .card-frond-all span {
+        font-size: 35px;
+        /* default large screens */
+        color: #dad289;
+    }
+    /* Responsive font and card height adjustments */
+    
+    @media (max-width: 1199px) {
+        .card-inner1 {
+            padding-top: 65%;
+            /* slightly taller for medium screens */
+        }
+        .card-frond-all span {
+            font-size: 28px;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .card-inner1 {
+            padding-top: 80%;
+            /* taller for mobile */
+        }
+        .card-frond-all span {
+            font-size: 22px;
+        }
     }
     
     .typed-text {
@@ -157,6 +188,12 @@ Free HTML CSS Template
         background-repeat: no-repeat;
         background-position: top center;
         pointer-events: none;
+    }
+    
+    .typed {
+        font-size: 35px;
+        font-weight: bold;
+        color: rgb(156, 209, 10);
     }
 </style>
 
@@ -213,39 +250,41 @@ Free HTML CSS Template
         </div>
         <div class="hero-content">
             <h1>OEUNG SOVANNAROTH</h1>
-            <p class="subtitle typed-text">Creative Developer, Designer, Developer, Freelancer, Photographer</p>
+            <p style="font-size: 23px; font-weight: bold;">I'm a
+                <p><span class=" typed " data-typed-items="Designer, Developer, Freelancer, Photographer "></span><span class="typed-cursor " aria-hidden="true "></span></p>
+            </p>
             <p>Crafting digital experiences with passion and precision</p>
-            <div class="cta-buttons">
-                <a href="#timeline" class="cta-primary">View My Work</a>
-                <a href="#contact" class="cta-secondary">Let's Talk</a>
+            <div class="cta-buttons ">
+                <a href="#timeline " class="cta-primary ">View My Work</a>
+                <a href="#contact " class="cta-secondary ">Let's Talk</a>
             </div>
 
-            <div class="stats-section">
-                <div class="stat-card">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Projects</span>
+            <div class="stats-section ">
+                <div class="stat-card ">
+                    <span class="stat-number ">10+</span>
+                    <span class="stat-label ">Projects</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">2+</span>
-                    <span class="stat-label">Years</span>
+                <div class="stat-card ">
+                    <span class="stat-number ">2+</span>
+                    <span class="stat-label ">Years</span>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="about" class="fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">I’m a front-end developer passionate about creating modern, responsive, and user-friendly websites. I enjoy turning ideas into real digital experiences using clean code, creativity, and problem-solving. I am always learning new technologies
+    <section id="about " class="fade-in ">
+        <div class="container ">
+            <div class="section-header ">
+                <h2 class="section-title ">About Me</h2>
+                <p class="section-subtitle ">I’m a front-end developer passionate about creating modern, responsive, and user-friendly websites. I enjoy turning ideas into real digital experiences using clean code, creativity, and problem-solving. I am always learning new technologies
                     and improving my UI/UX skills to build better products.</p>
             </div>
 
-            <div class="about-content">
-                <div class="about-intro">
-                    <div class="about-image"></div>
-                    <div class="about-text">
+            <div class="about-content ">
+                <div class="about-intro ">
+                    <div class="about-image "></div>
+                    <div class="about-text ">
 
                         <p>I'm Sovannaroth, a passionate Front-End Developer focused on crafting beautiful, functional, and user-centered websites. I bring ideas to life through clean code, thoughtful design, and animation.
                         </p>
@@ -255,47 +294,47 @@ Free HTML CSS Template
 
                 <div>
                     <!-- Section Title -->
-                    <div class="section-title" data-aos="fade-up">
+                    <div class="section-title " data-aos="fade-up ">
 
                         <h2>WHAT CAN I DO?</h2>
 
                     </div>
                     <!-- End Section Title -->
 
-                    <section class="card-do">
-                        <div class="card1">
-                            <div class="card-inner1">
-                                <div class="card-frond-all">
-                                    <div class="card-front1"><span>Website Development</span></div>
+                    <section class="card-do ">
+                        <div class="card1 ">
+                            <div class="card-inner1 ">
+                                <div class="card-frond-all ">
+                                    <div class="card-front1 "><span>Website Development</span></div>
                                 </div>
-                                <div class="card-back1">
-                                    <div class="card-do-title"><span>Website Development</span>
+                                <div class="card-back1 ">
+                                    <div class="card-do-title "><span>Website Development</span>
                                         <p>Crafting responsive, scalable, and visually appealing website tailored to business needs.</p>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="card1">
-                            <div class="card-inner1">
-                                <div class="card-frond-all">
+                        <div class="card1 ">
+                            <div class="card-inner1 ">
+                                <div class="card-frond-all ">
 
-                                    <div class="card-front2"><span>UI/UX & Edit Video</span></div>
+                                    <div class="card-front2 "><span>UI/UX & Edit Video</span></div>
                                 </div>
-                                <div class="card-back2">
-                                    <div class="card-do-title"><span>UI/UX & Edit Video</span>
+                                <div class="card-back2 ">
+                                    <div class="card-do-title "><span>UI/UX & Edit Video</span>
                                         <p>Designing intuitive user interfaces and creating string visual assets including branding, making materal, and layouts that deliver both function and beauty.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card1">
-                            <div class="card-inner1">
-                                <div class="card-frond-all">
-                                    <div class="card-front3"><span>Content Creation</span></div>
+                        <div class="card1 ">
+                            <div class="card-inner1 ">
+                                <div class="card-frond-all ">
+                                    <div class="card-front3 "><span>Content Creation</span></div>
                                 </div>
-                                <div class="card-back2">
-                                    <div class="card-do-title"><span>Content Creation</span>
+                                <div class="card-back2 ">
+                                    <div class="card-do-title "><span>Content Creation</span>
                                         <p>Creating educational and engaging content about tech. design, and development.
                                         </p>
                                     </div>
@@ -308,130 +347,130 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <section id="skills" class="fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & technologies</h2>
-                <p class="section-subtitle">Combining technical excellence with creative vision.</p>
+    <section id="skills " class="fade-in ">
+        <div class="container ">
+            <div class="section-header ">
+                <h2 class="section-title ">SKILLS & TECHNOLOGIES</h2>
+                <p class="section-subtitle ">Combining technical excellence with creative vision.</p>
             </div>
 
-            <div class="skills-container">
-                <div class="skills-wrapper">
-                    <div class="skills-visual">
-                        <div class="skills-circle">
-                            <!-- <div class="skill-node">
-                                <div class="skill-icon">🎨</div>
-                                <div class="skill-name">UI/UX</div>
+            <div class="skills-container ">
+                <div class="skills-wrapper ">
+                    <div class="skills-visual ">
+                        <div class="skills-circle ">
+                            <!-- <div class="skill-node ">
+                                <div class="skill-icon ">🎨</div>
+                                <div class="skill-name ">UI/UX</div>
                             </div>
-                            <div class="skill-node">
-                                <div class="skill-icon">⚛️</div>
-                                <div class="skill-name">React</div>
+                            <div class="skill-node ">
+                                <div class="skill-icon ">⚛️</div>
+                                <div class="skill-name ">React</div>
                             </div>
-                            <div class="skill-node">
-                                <div class="skill-icon">📱</div>
-                                <div class="skill-name">Mobile</div>
+                            <div class="skill-node ">
+                                <div class="skill-icon ">📱</div>
+                                <div class="skill-name ">Mobile</div>
                             </div>
-                            <div class="skill-node">
-                                <div class="skill-icon">⚙️</div>
-                                <div class="skill-name">Backend</div>
+                            <div class="skill-node ">
+                                <div class="skill-icon ">⚙️</div>
+                                <div class="skill-name ">Backend</div>
                             </div>
-                            <div class="skill-node">
-                                <div class="skill-icon">🚀</div>
-                                <div class="skill-name">DevOps</div>
+                            <div class="skill-node ">
+                                <div class="skill-icon ">🚀</div>
+                                <div class="skill-name ">DevOps</div>
                             </div>
-                            <div class="skill-node">
-                                <div class="skill-icon">🚀</div>
-                                <div class="skill-name">DevOps</div>
+                            <div class="skill-node ">
+                                <div class="skill-icon ">🚀</div>
+                                <div class="skill-name ">DevOps</div>
                             </div> -->
 
-                            <div class="banner">
-                                <div class="slider" style="--quantity: 21">
+                            <div class="banner ">
+                                <div class="slider " style="--quantity: 21 ">
 
-                                    <div class="item" style="--position: 1">
-                                        <i class="devicon-csharp-plain colored"></i>
+                                    <div class="item " style="--position: 1 ">
+                                        <i class="devicon-csharp-plain colored "></i>
                                     </div>
-                                    <div class="item" style="--position: 2">
-                                        <i class="devicon-cplusplus-plain colored"></i>
+                                    <div class="item " style="--position: 2 ">
+                                        <i class="devicon-cplusplus-plain colored "></i>
                                     </div>
-                                    <div class="item" style="--position: 3">
+                                    <div class="item " style="--position: 3 ">
 
-                                        <i class="devicon-microsoftsqlserver-plain-wordmark colored"></i>
-
-                                    </div>
-                                    <div class="item" style="--position: 4">
-
-                                        <i class="devicon-mysql-plain-wordmark"></i>
+                                        <i class="devicon-microsoftsqlserver-plain-wordmark colored "></i>
 
                                     </div>
-                                    <div class="item" style="--position: 5">
-                                        <i class="devicon-html5-plain colored"></i>
-                                    </div>
-                                    <div class="item" style="--position: 6">
-                                        <i class="devicon-css3-plain-wordmark"></i>
+                                    <div class="item " style="--position: 4 ">
+
+                                        <i class="devicon-mysql-plain-wordmark "></i>
 
                                     </div>
-                                    <div class="item" style="--position: 7">
-                                        <i class="devicon-tailwindcss-original"></i>
+                                    <div class="item " style="--position: 5 ">
+                                        <i class="devicon-html5-plain colored "></i>
                                     </div>
-                                    <div class="item" style="--position: 8">
-                                        <i class="devicon-javascript-plain colored"></i>
-                                    </div>
-                                    <div class="item" style="--position: 9">
-                                        <i class="devicon-jquery-plain-wordmark colored"></i>
-                                    </div>
-                                    <div class="item" style="--position: 10">
-
-                                        <i class="devicon-react-original-wordmark colored"></i>
+                                    <div class="item " style="--position: 6 ">
+                                        <i class="devicon-css3-plain-wordmark "></i>
 
                                     </div>
-                                    <div class="item" style="--position: 11">
-                                        <i class="devicon-bootstrap-plain-wordmark colored"></i>
+                                    <div class="item " style="--position: 7 ">
+                                        <i class="devicon-tailwindcss-original "></i>
                                     </div>
-                                    <div class="item" style="--position: 12">
+                                    <div class="item " style="--position: 8 ">
+                                        <i class="devicon-javascript-plain colored "></i>
+                                    </div>
+                                    <div class="item " style="--position: 9 ">
+                                        <i class="devicon-jquery-plain-wordmark colored "></i>
+                                    </div>
+                                    <div class="item " style="--position: 10 ">
 
-                                        <i class="devicon-github-original-wordmark"></i>
-
-                                    </div>
-                                    <div class="item" style="--position: 13">
-                                        <i class="devicon-vercel-original"></i>
-                                    </div>
-                                    <div class="item" style="--position: 14">
-                                        <i class="devicon-php-plain colored"></i>
-                                    </div>
-                                    <div class="item" style="--position: 15">
-
-                                        <i class="devicon-laravel-original colored"></i>
+                                        <i class="devicon-react-original-wordmark colored "></i>
 
                                     </div>
-                                    <div class="item" style="--position: 16">
-                                        <i class="devicon-python-plain colored"></i>
+                                    <div class="item " style="--position: 11 ">
+                                        <i class="devicon-bootstrap-plain-wordmark colored "></i>
                                     </div>
-                                    <div class="item" style="--position: 17">
+                                    <div class="item " style="--position: 12 ">
 
-                                        <i class="devicon-django-plain"></i>
-
-
+                                        <i class="devicon-github-original-wordmark "></i>
 
                                     </div>
-                                    <div class="item" style="--position: 18">
-                                        <i class="devicon-figma-plain colored"></i>
+                                    <div class="item " style="--position: 13 ">
+                                        <i class="devicon-vercel-original "></i>
                                     </div>
-                                    <div class="item" style="--position: 19">
+                                    <div class="item " style="--position: 14 ">
+                                        <i class="devicon-php-plain colored "></i>
+                                    </div>
+                                    <div class="item " style="--position: 15 ">
 
-                                        <i class="devicon-kotlin-plain colored"></i>
+                                        <i class="devicon-laravel-original colored "></i>
 
                                     </div>
-                                    <div class="item" style="--position: 20">
-                                        <i class="devicon-dataspell-plain"></i>
+                                    <div class="item " style="--position: 16 ">
+                                        <i class="devicon-python-plain colored "></i>
                                     </div>
-                                    <div class="item" style="--position: 21">
-                                        <i class="devicon-mongodb-plain"></i>
+                                    <div class="item " style="--position: 17 ">
+
+                                        <i class="devicon-django-plain "></i>
+
 
 
                                     </div>
-                                    <div class="item" style="--position: 22">
+                                    <div class="item " style="--position: 18 ">
+                                        <i class="devicon-figma-plain colored "></i>
+                                    </div>
+                                    <div class="item " style="--position: 19 ">
 
-                                        <i class="devicon-postgresql-plain"></i>
+                                        <i class="devicon-kotlin-plain colored "></i>
+
+                                    </div>
+                                    <div class="item " style="--position: 20 ">
+                                        <i class="devicon-dataspell-plain "></i>
+                                    </div>
+                                    <div class="item " style="--position: 21 ">
+                                        <i class="devicon-mongodb-plain "></i>
+
+
+                                    </div>
+                                    <div class="item " style="--position: 22 ">
+
+                                        <i class="devicon-postgresql-plain "></i>
 
 
 
@@ -440,26 +479,26 @@ Free HTML CSS Template
                                 </div>
                             </div>
                             <!-- Center -->
-                            <!-- <div class="skills-center">⚡</div> -->
+                            <!-- <div class="skills-center ">⚡</div> -->
 
                         </div>
 
                     </div>
 
-                    <div class="skills-list">
-                        <div class="skill-item">
+                    <div class="skills-list ">
+                        <div class="skill-item ">
                             <h4>Frontend Excellence</h4>
                             <p>Modern JavaScript frameworks, responsive design, and pixel-perfect implementations</p>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 80%"></div>
+                            <div class="skill-progress ">
+                                <div class="skill-progress-bar " style="width: 80% "></div>
                             </div>
                         </div>
 
-                        <div class="skill-item">
+                        <div class="skill-item ">
                             <h4>Creative Design</h4>
                             <p>User-centered design thinking with a focus on accessibility and visual appeal</p>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 80%"></div>
+                            <div class="skill-progress ">
+                                <div class="skill-progress-bar " style="width: 80% "></div>
                             </div>
                         </div>
                     </div>
@@ -468,131 +507,131 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <section id="timeline" class="fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Resume</h2>
-                <p class="section-subtitle">Driven front-end developer focused on transforming ideas into digital reality. Experienced in creating responsive layouts, modern interfaces, and interactive web animations. Passionate about continuous learning, problem-solving, and building
+    <section id="timeline " class="fade-in ">
+        <div class="container ">
+            <div class="section-header ">
+                <h2 class="section-title ">Resume</h2>
+                <p class="section-subtitle ">Driven front-end developer focused on transforming ideas into digital reality. Experienced in creating responsive layouts, modern interfaces, and interactive web animations. Passionate about continuous learning, problem-solving, and building
                     clean, user-centered digital experiences.</p>
             </div>
 
-            <div class="timeline-controls">
-                <button class="timeline-filter active" data-filter="all">All</button>
-                <button class="timeline-filter" data-filter="education">Education</button>
-                <button class="timeline-filter" data-filter="work">Work</button>
-                <button class="timeline-filter" data-filter="project">Projects</button>
+            <div class="timeline-controls ">
+                <button class="timeline-filter active " data-filter="all ">All</button>
+                <button class="timeline-filter " data-filter="education ">Education</button>
+                <button class="timeline-filter " data-filter="work ">Work</button>
+                <button class="timeline-filter " data-filter="project ">Projects</button>
             </div>
 
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-                <div class="timeline-progress"></div>
+            <div class="timeline-container ">
+                <div class="timeline-line "></div>
+                <div class="timeline-progress "></div>
 
-                <div class="timeline-item" data-category="education">
-                    <div class="timeline-node">🎓</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2018 - 2021</div>
-                        <h3 class="timeline-title">Secondary School diploma</h3>
-                        <div class="timeline-company">Kampot krong high school</div>
-                        <p class="timeline-description">
+                <div class="timeline-item " data-category="education ">
+                    <div class="timeline-node ">🎓</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2018 - 2021</div>
+                        <h3 class="timeline-title ">Secondary School diploma</h3>
+                        <div class="timeline-company ">Kampot krong high school</div>
+                        <p class="timeline-description ">
                             Focused on general education with emphasis on science and technology subjects. Developed teamwork and communication skills through school projects and activities.
                         </p>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">
+                        <div class="timeline-achievements ">
+                            <div class="timeline-achievement ">
                                 Graduated with certificate of Appreciation — (Year)</div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-category="education">
-                    <div class="timeline-node">🎓</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2024 - Present</div>
-                        <h3 class="timeline-title">High School Diploma</h3>
-                        <div class="timeline-company">Kampot krong high school</div>
-                        <p class="timeline-description">
+                <div class="timeline-item " data-category="education ">
+                    <div class="timeline-node ">🎓</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2024 - Present</div>
+                        <h3 class="timeline-title ">High School Diploma</h3>
+                        <div class="timeline-company ">Kampot krong high school</div>
+                        <p class="timeline-description ">
                             Graduated with a concentration in business and computing. Gained experience in research, presentations, and critical thinking.
                         </p>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">
+                        <div class="timeline-achievements ">
+                            <div class="timeline-achievement ">
 
                                 Graduated with a Diploma in Grade 12 with an overall Grade A.</div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-category="education">
-                    <div class="timeline-node">🎓</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021 - 2024</div>
-                        <h3 class="timeline-title">Bachelor of Computer Science and Engineering</h3>
-                        <div class="timeline-company">Aceleda university of bussiness</div>
-                        <p class="timeline-description">
+                <div class="timeline-item " data-category="education ">
+                    <div class="timeline-node ">🎓</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2021 - 2024</div>
+                        <h3 class="timeline-title ">Bachelor of Computer Science and Engineering</h3>
+                        <div class="timeline-company ">Aceleda university of bussiness</div>
+                        <p class="timeline-description ">
                             GCurrently pursuing studies in computer science, software development, and programming. Developing skills in web technologies, databases, and problem-solving for realworld applications.
                         </p>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">
+                        <div class="timeline-achievements ">
+                            <div class="timeline-achievement ">
                                 Achieved a 4.0 GPA during the first academic year.</div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-category="project">
-                    <div class="timeline-node">🚀</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <h3 class="timeline-title">iSTUDIO</h3>
-                        <div class="timeline-company">Personal Project</div>
-                        <p class="timeline-description">
+                <div class="timeline-item " data-category="project ">
+                    <div class="timeline-node ">🚀</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2025</div>
+                        <h3 class="timeline-title ">iSTUDIO</h3>
+                        <div class="timeline-company ">Personal Project</div>
+                        <p class="timeline-description ">
                             iSTUDIO focuses on delivering sleek, user-friendly interfaces and interactive digital experiences for clients.
                         </p>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">1,000+ active users</div>
-                            <div class="timeline-achievement">4.2/5 star rating</div>
+                        <div class="timeline-achievements ">
+                            <div class="timeline-achievement ">1,000+ active users</div>
+                            <div class="timeline-achievement ">4.2/5 star rating</div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-category="project">
-                    <div class="timeline-node">🚀</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <h3 class="timeline-title">VPuppy Land</h3>
-                        <div class="timeline-company">Personal Project</div>
-                        <p class="timeline-description">
+                <div class="timeline-item " data-category="project ">
+                    <div class="timeline-node ">🚀</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2025</div>
+                        <h3 class="timeline-title ">VPuppy Land</h3>
+                        <div class="timeline-company ">Personal Project</div>
+                        <p class="timeline-description ">
                             Puppy Land offers information on different dog breeds, pet care tips, adoption services, and an interactive community for pet lovers.
                         </p>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">100+ active users</div>
-                            <div class="timeline-achievement">4.2/5 star rating</div>
+                        <div class="timeline-achievements ">
+                            <div class="timeline-achievement ">100+ active users</div>
+                            <div class="timeline-achievement ">4.2/5 star rating</div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-category="project">
-                    <div class="timeline-node">🚀</div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <h3 class="timeline-title">VILLA AGENCY</h3>
-                        <div class="timeline-company">Personal Project</div>
-                        <p class="timeline-description">
+                <div class="timeline-item " data-category="project ">
+                    <div class="timeline-node ">🚀</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2025</div>
+                        <h3 class="timeline-title ">VILLA AGENCY</h3>
+                        <div class="timeline-company ">Personal Project</div>
+                        <p class="timeline-description ">
                             Villa Agency allows users to browse listings, view high-quality images, and contact agents directly for buying, renting, or investing in villas.
                         </p>
-                        <div class="timeline-achievements">
-                            <div class="timeline-achievement">10,000+ active users</div>
-                            <div class="timeline-achievement">4.8/5 star rating</div>
+                        <div class="timeline-achievements ">
+                            <div class="timeline-achievement ">10,000+ active users</div>
+                            <div class="timeline-achievement ">4.8/5 star rating</div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-category="work">
-                    <div class="timeline-item" data-category="work">
-                        <div class="timeline-node">💼</div>
-                        <div class="timeline-content">
-                            <div class="timeline-year">2025 - Present</div>
-                            <h3 class="timeline-title">Frontend Developer</h3>
-                            <div class="timeline-company">ICT Center</div>
-                            <p class="timeline-description">
+                <div class="timeline-item " data-category="work ">
+                    <div class="timeline-item " data-category="work ">
+                        <div class="timeline-node ">💼</div>
+                        <div class="timeline-content ">
+                            <div class="timeline-year ">2025 - Present</div>
+                            <h3 class="timeline-title ">Frontend Developer</h3>
+                            <div class="timeline-company ">ICT Center</div>
+                            <p class="timeline-description ">
                                 Started my professional journey building responsive web applications for startup clients. Learned to work in fast-paced environments and collaborate effectively with cross-functional teams.
                             </p>
-                            <div class="timeline-skills">
-                                <span class="timeline-skill">React</span>
-                                <span class="timeline-skill">JavaScript</span>
-                                <span class="timeline-skill">Jqurey</span>
-                                <span class="timeline-skill">Git</span>
+                            <div class="timeline-skills ">
+                                <span class="timeline-skill ">React</span>
+                                <span class="timeline-skill ">JavaScript</span>
+                                <span class="timeline-skill ">Jqurey</span>
+                                <span class="timeline-skill ">Git</span>
                             </div>
 
                         </div>
@@ -602,19 +641,19 @@ Free HTML CSS Template
     </section>
 
 
-    <section id="contact" class="fade-in">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Create Together</h2>
-                <p class="section-subtitle">Ready to bring your ideas to life? Let's start a conversation</p>
+    <section id="contact " class="fade-in ">
+        <div class="container ">
+            <div class="section-header ">
+                <h2 class="section-title ">Let's Create Together</h2>
+                <p class="section-subtitle ">Ready to bring your ideas to life? Let's start a conversation</p>
             </div>
 
-            <div class="contact-content">
-                <div class="contact-info">
+            <div class="contact-content ">
+                <div class="contact-info ">
                     <h3>Get In Touch</h3>
                     <p>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you.</p>
 
-                    <div class="contact-details">
+                    <div class="contact-details ">
                         <h4>💼 Available for:</h4>
                         <ul>
                             <li>Freelance Projects</li>
@@ -624,27 +663,27 @@ Free HTML CSS Template
                         </ul>
                     </div>
 
-                    <div class="contact-details">
+                    <div class="contact-details ">
                         <h4>📍 Based in:</h4>
                         <p>Phnom Penh Cambodia</p>
                     </div>
                 </div>
 
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Your Name" required>
+                <div class="contact-form-container ">
+                    <form class="contact-form ">
+                        <div class="form-group ">
+                            <input type="text " class="form-input " placeholder="Your Name " required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Your Email" required>
+                        <div class="form-group ">
+                            <input type="email " class="form-input " placeholder="Your Email " required>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Project Type" required>
+                        <div class="form-group ">
+                            <input type="text " class="form-input " placeholder="Project Type " required>
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        <div class="form-group ">
+                            <textarea class="form-textarea " rows="5 " placeholder="Tell me about your project... " required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit " class="submit-btn ">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -652,8 +691,9 @@ Free HTML CSS Template
     </section>
 
 
-
-    <script src="tooplate-titan-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12 "></script>
+    <script src="tooplate-titan-script.js ">
+    </script>
 </body>
 
 </html>
