@@ -681,7 +681,7 @@ Free HTML CSS Template
                             <input type="text " class="form-input " id="message" placeholder="Project Type " required>
                         </div>
                         <div class="form-group ">
-                            <textarea class="form-textarea " rows="5 " placeholder="Tell me about your project... " required></textarea>
+                            <textarea class="form-textarea " id="textarea" rows="5 " placeholder="Tell me about your project... " required></textarea>
                         </div>
                         <button type="submit " class="submit-btn ">Send Message</button>
                     </form>
@@ -697,11 +697,13 @@ Free HTML CSS Template
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
+            const textarea = document.getElementById("textarea").value;
 
             const telegramMessage = `New Contact Message:%0A
 👤 Name: ${name}%0A
 📧 Email: ${email}%0A
-💬 Message: ${message}`;
+💬 Message: ${message}%0A
+📧 Feadback:${textarea}`;
 
             const BOT_TOKEN = "8381888400:AAEFOZ6OtLH1kWCEoM4h-ap8BXHENHEWVFs";
             const CHAT_ID = "1369212693";
