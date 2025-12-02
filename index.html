@@ -669,26 +669,54 @@ Free HTML CSS Template
                     </div>
                 </div>
 
-                <div class="contact-form-container ">
-                    <form class="contact-form ">
+                <div class="contact-form-container  ">
+                    <form class="contact-form " id="contactForm">
                         <div class="form-group ">
-                            <input type="text " class="form-input " placeholder="Your Name " required>
+                            <input type="text " class="form-input " id="name" placeholder="Your Name " required>
                         </div>
                         <div class="form-group ">
-                            <input type="email " class="form-input " placeholder="Your Email " required>
+                            <input type="email " class="form-input " id="email" placeholder="Your Email " required>
                         </div>
                         <div class="form-group ">
-                            <input type="text " class="form-input " placeholder="Project Type " required>
+                            <input type="text " class="form-input " id="message" placeholder="Project Type " required>
                         </div>
                         <div class="form-group ">
                             <textarea class="form-textarea " rows="5 " placeholder="Tell me about your project... " required></textarea>
                         </div>
                         <button type="submit " class="submit-btn ">Send Message</button>
                     </form>
+                    <p id="status"></p>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            const telegramMessage = `New Contact Message:%0A
+👤 Name: ${name}%0A
+📧 Email: ${email}%0A
+💬 Message: ${message}`;
+
+            const BOT_TOKEN = "8381888400:AAEFOZ6OtLH1kWCEoM4h-ap8BXHENHEWVFs";
+            const CHAT_ID = "1369212693";
+
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${telegramMessage}`, {
+                    method: "GET"
+                })
+                .then(() => {
+                    document.getElementById("status").innerText = "Message sent successfully!";
+                })
+                .catch(() => {
+                    document.getElementById("status").innerText = "Failed to send message!";
+                });
+        });
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12 "></script>
