@@ -195,6 +195,42 @@ Free HTML CSS Template
         font-weight: bold;
         color: rgb(156, 209, 10);
     }
+    
+    .mobile-top-icons {
+        position: fixed;
+        top: 14;
+        left: 0;
+        right: 0;
+        backdrop-filter: blur(10px);
+        display: none;
+        justify-content: space-around;
+        padding: 12px 0;
+        z-index: 1000;
+        border-bottom: 1px solid #eee;
+        margin-top: 10px;
+    }
+    
+    .mobile-top-icons a {
+        font-size: 26px;
+        color: #ffffff;
+        opacity: 0.8;
+        padding: 5px 8px;
+    }
+    
+    .mobile-top-icons a:hover,
+    .mobile-top-icons a.active {
+        opacity: 1;
+        color: #007bff;
+    }
+    
+    @media (max-width: 768px) {
+        .mobile-top-icons {
+            display: flex;
+            width: 60%;
+            align-items: center;
+            margin-left: 20%;
+        }
+    }
 </style>
 
 <body>
@@ -202,7 +238,7 @@ Free HTML CSS Template
         <div class="nav-container">
             <a href="#home" class="logo">
                 <div class="logo-icon"></div>
-                <div class="logo-text">SOVANNAROTH</div>
+                <div class="logo-text"></div>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -212,12 +248,19 @@ Free HTML CSS Template
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <!-- <span></span>
                 <span></span>
-                <span></span>
-                <span></span>
+                <span></span> -->
             </div>
         </div>
-        <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-top-icons">
+            <a href="#home"><i class="fa-solid fa-house"></i></a>
+            <a href="#about"><i class="fa-regular fa-folder"></i></a>
+            <a href="#skills"><i class="fa-solid fa-code"></i></a>
+            <a href="#timeline"><i class="fa-solid fa-basket-shopping"></i></a>
+            <a href="#contact"><i class="fa-solid fa-phone"></i></a>
+        </div>
+        <!-- <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -225,7 +268,7 @@ Free HTML CSS Template
                 <li><a href="#timeline">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
+        </div> -->
     </nav>
 
     <section id="home" class="hero">
@@ -250,12 +293,13 @@ Free HTML CSS Template
         </div>
         <div class="hero-content">
             <h1>OEUNG SOVANNAROTH</h1>
-            <p style="font-size: 23px; font-weight: bold;">I'm a
-                <p><span class=" typed " data-typed-items="Designer, Developer, Freelancer, Photographer "></span><span class="typed-cursor " aria-hidden="true "></span></p>
+            <p style="font-size: 23px; font-weight: bold;">
+                <p><span class=" typed " data-typed-items="DESIGNER, FRONT-END DEVELOPER, ANDROID DEVELOPER, FREELANCER, PHOTOGRAPHER
+"></span><span class="typed-cursor " aria-hidden="true "></span></p>
             </p>
             <p>Crafting digital experiences with passion and precision</p>
             <div class="cta-buttons ">
-                <a href="#timeline " class="cta-primary ">View My Work</a>
+                <a href="#skills " class="cta-primary ">TECHNOLOGIES</a>
                 <a href="#contact " class="cta-secondary ">Let's Talk</a>
             </div>
 
@@ -273,7 +317,7 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <section id="about " class="fade-in ">
+    <section id="about" class="fade-in ">
         <div class="container ">
             <div class="section-header ">
                 <h2 class="section-title ">About Me</h2>
@@ -347,7 +391,7 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <section id="skills " class="fade-in ">
+    <section id="skills" class="fade-in ">
         <div class="container ">
             <div class="section-header ">
                 <h2 class="section-title ">SKILLS & TECHNOLOGIES</h2>
@@ -507,7 +551,7 @@ Free HTML CSS Template
         </div>
     </section>
 
-    <section id="timeline " class="fade-in ">
+    <section id="timeline" class="fade-in ">
         <div class="container ">
             <div class="section-header ">
                 <h2 class="section-title ">Resume</h2>
@@ -522,7 +566,7 @@ Free HTML CSS Template
                 <button class="timeline-filter " data-filter="project ">Projects</button>
             </div>
 
-            <div class="timeline-container ">
+            <div class="timeline-container " data-category="all">
                 <div class="timeline-line "></div>
                 <div class="timeline-progress "></div>
 
@@ -617,31 +661,31 @@ Free HTML CSS Template
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item " data-category="work ">
-                    <div class="timeline-item " data-category="work ">
-                        <div class="timeline-node ">💼</div>
-                        <div class="timeline-content ">
-                            <div class="timeline-year ">2025 - Present</div>
-                            <h3 class="timeline-title ">Frontend Developer</h3>
-                            <div class="timeline-company ">ICT Center</div>
-                            <p class="timeline-description ">
-                                Started my professional journey building responsive web applications for startup clients. Learned to work in fast-paced environments and collaborate effectively with cross-functional teams.
-                            </p>
-                            <div class="timeline-skills ">
-                                <span class="timeline-skill ">React</span>
-                                <span class="timeline-skill ">JavaScript</span>
-                                <span class="timeline-skill ">Jqurey</span>
-                                <span class="timeline-skill ">Git</span>
-                            </div>
 
+                <div class="timeline-item " data-category="work ">
+                    <div class="timeline-node ">💼</div>
+                    <div class="timeline-content ">
+                        <div class="timeline-year ">2025 - Present</div>
+                        <h3 class="timeline-title ">Frontend Developer</h3>
+                        <div class="timeline-company ">ICT Center</div>
+                        <p class="timeline-description ">
+                            Started my professional journey building responsive web applications for startup clients. Learned to work in fast-paced environments and collaborate effectively with cross-functional teams.
+                        </p>
+                        <div class="timeline-skills ">
+                            <span class="timeline-skill ">React</span>
+                            <span class="timeline-skill ">JavaScript</span>
+                            <span class="timeline-skill ">Jqurey</span>
+                            <span class="timeline-skill ">Git</span>
                         </div>
+
                     </div>
+
                 </div>
             </div>
     </section>
 
 
-    <section id="contact " class="fade-in ">
+    <section id="contact" class="fade-in ">
         <div class="container ">
             <div class="section-header ">
                 <h2 class="section-title ">Let's Create Together</h2>
