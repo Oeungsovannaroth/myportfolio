@@ -519,9 +519,15 @@ https://www.tooplate.com/view/2147-titan-folio
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
+            font-size: 2rem;
         }
         
-        .hero h1 {
+        .hero-content span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .hero .hero h1 {
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 800;
             margin-bottom: 1.5rem;

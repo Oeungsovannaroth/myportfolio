@@ -190,11 +190,11 @@ function initTimeline() {
 document.addEventListener('DOMContentLoaded', initTimeline);
 
 const words = [
-    "Creative Developer",
-    "Designer",
-    "Developer",
-    "Freelancer",
-    "Photographer"
+    "DESIGNER",
+    "FRONT-END DEVELOPER",
+    "ANDROID DEVELOPER",
+    "FREELANCER",
+    "PHOTOGRAPHER"
 ];
 const selectTyped = document.querySelector('.typed');
 if (selectTyped) {
